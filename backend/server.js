@@ -5,6 +5,7 @@ import colors from "colors";
 import path from "path";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
+import sslRedirect from "heroku-ssl-redirect";
 
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
@@ -15,6 +16,8 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
+app.use(sslRedirect());
 
 app.use(express.json());
 if (process.env.NODE_ENV === "development") {
