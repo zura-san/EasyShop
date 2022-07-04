@@ -1,6 +1,10 @@
 {
   "name": "EasyShop",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
+  },
   "description": "MERN easy shopping cart app",
   "main": "server.js",
   "type": "module",
@@ -11,7 +15,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "heroku-postbuild": "YARN_PRODUCTION=false yarn add --prefix frontend && yarn run build --prefix frontend"
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn --prefix frontend && yarn run build --prefix frontend"
   },
   "author": "Michael Wakjira",
   "license": "MIT",
