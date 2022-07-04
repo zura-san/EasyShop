@@ -16,7 +16,6 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
 app.use(sslRedirect());
 
 app.use(express.json());
