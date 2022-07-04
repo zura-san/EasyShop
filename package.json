@@ -5,16 +5,15 @@
     "node": "16.x"
   },
   "description": "MERN easy shopping cart app",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "start": "node backend/api/index.js",
+    "server": "nodemon backend/api/index.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --force --prefix frontend && npm run build --prefix frontend"
+    "data:destroy": "node backend/seeder -d"
   },
   "author": "Michael Wakjira",
   "license": "MIT",
